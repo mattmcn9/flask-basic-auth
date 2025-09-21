@@ -58,7 +58,7 @@ Use cases
 1) Create a temporary container for testing purposes:
 
 ```bash
-  docker run --rm mattmcn9/flask-basic-auth
+  docker run --rm -p 8080:8080 mattmcn9/flask-basic-auth
 ```
 
 2) Create a container and set the login information, with a binded data directory:
