@@ -1,0 +1,13 @@
+services:
+  file-server:            # Service name (you can call it anything)
+    image: mattmcn9/flask-basic-auth            
+    container_name: flask-basic-auth 
+    ports:
+      - "8080:8080"       # Map host port 8080 -> container port 8080
+    environment:
+      USERNAME: user    # Username for Basic Auth (change as needed)
+      PASSWORD: secret  # Password for Basic Auth (change as needed)
+      DATA_DIR: /data              # Directory inside the container to serve
+      PORT: 8080                   # Port Flask will listen on inside container
+    volumes:
+      - ./files:/data     # Mount local ./files directory into /data in container
